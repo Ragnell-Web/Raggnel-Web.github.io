@@ -1,0 +1,545 @@
+html {
+  scroll-behavior: smooth;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: sans-serif;
+  font-family: 'Baloo Thambi 2', cursive;
+}
+
+header {
+  display:inline;
+}
+
+nav {
+  display: flex;
+  justify-content: space-between;
+  padding: 10px 10%;
+  position: sticky;
+  top: 0;
+  background-color: white;
+  z-index: 3;
+}
+
+/* Hover dari Nav-bar */
+.nav-link-satu:hover::after {
+  content: '';
+  display: block;
+  width: 50px;
+  border-bottom: 3px solid darkblue;
+  margin: auto;
+  margin-left: 25px;
+  margin-bottom: -8px;
+  position: absolute;
+}
+
+.nav-link-dua:hover::after {
+  content: '';
+  display: block;
+  width: 75px;
+  border-bottom: 3px solid darkblue;
+  margin: auto;
+  margin-left: 128px;
+  margin-bottom: -8px;
+  position: absolute;
+}
+
+.nav-link-tiga:hover::after {
+  content: '';
+  display: block;
+  width: 30px;
+  border-bottom: 3px solid darkblue;
+  margin: auto;
+  margin-left: 263px;
+  margin-bottom: -8px;
+  position: absolute;
+}
+
+/* Akhir hover dari navbar */
+
+ul li {
+  list-style: none;
+  display: inline;
+  padding: 0 20px;
+}
+
+header nav a {
+  font-size: 24px;
+  color: black;
+}
+
+li a {
+  text-decoration: none;
+  color: white;
+  font-size: 24px;
+  text-shadow: 1px 1px 1px #000;
+}
+
+.hamburger{
+  display: none;
+}
+
+.jumbotron {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  background-image: url(img/bgi.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  padding: 80px;
+  position: relative;
+}
+
+.jumbotron::after {
+  content: '';
+  display: block;
+  width: 100%;
+  height: 100%;
+  background-image: linear-gradient(to top, rgba(0, 0, 0, 1), rgba(0, 0, 0, 0));
+  position: absolute;
+  left: 0;
+  bottom: 0;
+}
+
+div.jumbotron figcaption {
+  margin-top: 20px;
+  text-align: center;
+  font-size: 33px;
+  color: white;
+  font-weight: bold;
+  position: relative;
+  z-index: 1;
+  text-shadow: 1px 1px 1px black;
+}
+
+figure h3.buka {
+  color: white;
+  position: relative;
+  z-index: 1;
+  margin-top: 20px;
+  text-align: center;
+}
+
+header .jumbotron img {
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  position: relative;
+  z-index: 1;
+  box-shadow: 3px 3px 5px black;
+}
+
+main {
+  display: flex;
+  justify-content: center;
+  padding: 10px 10%;
+}
+
+div.content {
+  flex: 3;
+}
+
+.center {
+  text-align: center;
+  font-size: 30px;
+  color: #444;
+  margin-top: 20px;
+}
+
+hr {
+  width: 250px;
+  border-top: 4px solid #999;
+  margin: auto;
+  margin-bottom: 40px;
+}
+
+h3.intro {
+  font-family: 'Josefin Sans',
+    sans-serif;
+  font-size: 25px;
+  margin-top: 50px;
+  margin-bottom: 20px;
+
+}
+
+.gambar-profil {
+  max-width: 100%;
+  margin-bottom: 20px;
+
+}
+
+article.profil p {
+  font-family: "Josefin Sans",
+    sans-serif;
+  font-weight: 200;
+  font-size: 18px;
+  line-height: 1.9;
+  color: #6c757d;
+  text-align: justify;
+}
+
+/* Portfolio */
+.baris {
+  display: flex;
+  padding: 0 30px;
+  margin: 15px 0;
+
+}
+
+.kolom {
+  position: relative;
+  width: 100%;
+  padding-right: 15px;
+  padding-left: 15px;
+}
+
+.port {
+  border-radius: 5px;
+  border: 5px solid #dedede;
+  max-width: 100%;
+}
+
+.port:hover {
+  transform: scale(1.1);
+  filter: brightness(110%);
+}
+
+.overlay {
+  position: fixed;
+  left: 0;
+  top: 0;
+  background-color: rgba(0, 0, 0, 0);
+  z-index: 100;
+  width: 0;
+  height: 0;
+  overflow: hidden;
+  transition: 1s;
+  padding: 100px 0;
+  text-align: center;
+}
+
+.overlay:target {
+  bottom: 0;
+  right: 0;
+  width: auto;
+  height: auto;
+  background-color: rgba(0, 0, 0, 0.7);
+}
+
+.overlay img {
+  background-size: cover;
+  box-shadow: 0 0 10px 5px rgba(0, 0, 0, 0.5);
+  max-height: 100%;
+}
+
+.overlay:target img {
+  animation: fade 1s;
+}
+
+.overlay .responsive {
+  position: absolute;
+  top: 50px;
+  left: 50%;
+}
+
+.overlay .close {
+  transform: scale(2);
+  opacity: 0;
+  color: white;
+}
+
+.close:hover {
+  color: darkred;
+}
+
+.overlay:target .close {
+  animation: slidedown 1s .5s forwards;
+}
+
+a.next i,
+a.prev i {
+  transform: scale(10);
+  position: absolute;
+  top: 45%;
+  left: 87%;
+  opacity: 0;
+  color: lightblue;
+  transition: .5s;
+}
+
+a.prev i {
+  margin-left: -50px;
+  left: 16%;
+}
+
+.overlay:target .next i,
+.overlay:target .prev i {
+  animation: fade 1s .5s forwards;
+}
+
+.overlay:target .next i:hover,
+.overlay:target .prev i:hover {
+  color: blue;
+  transform: scale(12);
+}
+
+/* Akhir portfolio */
+
+/* Skill */
+.skill-rizal {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.skill-rizal img {
+  flex-basis: 66.66%;
+  max-width: 10%;
+  margin-right: 20px;
+  margin-bottom: 20px;
+}
+
+.ukuran {
+  transform: scale(0.79);
+}
+
+.kotak {
+  height: 10px;
+  width: 400px;
+  border: 1px solid black;
+  border-radius: 10px;
+
+
+}
+
+.kotak .kotak-nilai {
+  height: 100%;
+  border-radius: 10px 0 0 10px;
+  border: 1px solid white;
+}
+
+.pertama {
+  width: 95%;
+  background-color: rgb(241, 177, 57);
+}
+
+.kedua {
+  width: 85%;
+  background-color: rgb(129, 129, 255);
+}
+
+.ketiga {
+  width: 80%;
+  background-color: skyblue;
+}
+
+.keempat {
+  width: 70%;
+  background-color: darkblue;
+}
+
+.kelima {
+  width: 60%;
+  background-color: lightblue;
+}
+
+/* Akhir skill */
+
+/* Aside */
+aside {
+  font-family: "Josefin Sans";
+  flex: 1;
+  margin: 50px auto;
+  padding-left: 20px;
+  text-align: center;
+  position: sticky;
+  top: 80px;
+}
+
+article.aside {
+  border-radius: 5px;
+  padding: 20px;
+  box-shadow: 0px 5px 8px 0 rgba(0, 0, 0, 0.2);
+}
+
+article.aside img {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  border: 1px solid #444;
+  box-shadow: 0 5px 8px 0px black;
+}
+
+article.aside figcaption {
+  font-family: "Josefin Sans";
+  color: #6c757d;
+  font-size: 22px;
+  margin-top: 20px;
+}
+
+tr {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 20px;
+}
+
+th {
+  padding-right: 35px;
+}
+
+/* akhir Aside */
+
+/* Contact */
+.cont {
+  margin-top: 30px;
+  box-shadow: 0 5px 8px 0 rgba(0, 0, 0, 0.2);
+  padding: 20px;
+  border-radius: 5px;
+}
+
+.contact {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.contact a {
+
+  font-size: 30px;
+}
+
+.contact .abu-abu {
+  color: grey;
+}
+
+.contact .merah {
+  color: red;
+}
+
+.contact p {
+
+  font-size: 20px;
+}
+
+/* Akhir contact */
+
+/* Footer */
+footer {
+  background-color: #333;
+  padding: 20px;
+  text-align: center;
+  color: white;
+  font-family: "josefin Sans";
+  margin-top: 30px;
+}
+
+
+
+button {
+  padding: 8px;
+  border-radius: 5px;
+  background-color: #17a2b8;
+  border: #17a2b8;
+  margin: 20px;
+  transition: .6s;
+}
+
+button:hover {
+  background-color: #138496;
+
+}
+
+button a {
+  color: white;
+  text-decoration: none;
+  font-size: 18px;
+}
+
+/* Akhiir Footer */
+
+/* for android */
+@media (max-width: 600px) {
+  header nav a {
+    font-size: 16px;
+    color: black;
+  }
+
+  main {
+    display: flex;
+    flex-wrap: wrap;
+  }
+
+  .baris{
+    display: flex;
+    flex-wrap: wrap;
+    margin-bottom: -15px;
+  }
+
+  .kolom{
+    margin-bottom: 15px;
+  }
+
+  nav {
+    padding: 10px;
+  }
+
+  .nav-link-satu:hover::after {
+    content: '';
+    display: block;
+    width: 28px;
+    border-bottom: 3px solid #000;
+    margin: auto;
+    margin-left: 26px;
+    margin-bottom: -8px;
+    position: absolute;
+  }
+
+  .nav-link-dua:hover::after {
+    content: '';
+    display: block;
+    width: 37px;
+    border-bottom: 3px solid #000;
+    margin: auto;
+    margin-left: 114px;
+    margin-bottom: -8px;
+    position: absolute;
+  }
+
+  .nav-link-tiga:hover::after {
+    content: '';
+    display: block;
+    width: 18px;
+    border-bottom: 3px solid #000;
+    margin: auto;
+    margin-left: 213px;
+    margin-bottom: -8px;
+    position: absolute;
+  }
+
+}
+
+/* Animasi */
+@keyframes fade {
+  0% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes slidedown {
+  0% {
+    opacity: 0;
+    margin-top: -50px;
+  }
+
+  100% {
+    opacity: 1;
+    margin-top: 10px;
+  }
+}
