@@ -16,8 +16,7 @@ var yy = date.getYear();
 var year = (yy < 1000) ? yy + 1900 : yy;
 var umur = year - tglUltah;
 
-console.log(umur);
-
+document.getElementById('tgl').innerHTML = umur;
 // let a = document.querySelector('li a');
 
 // a.addEventListener('click',function (e) {
