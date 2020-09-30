@@ -10,7 +10,8 @@ $('li a').on('click',function (e) {
   
 })
 
-var tglUltah = 2002
+var tglUltah = 2002;
+var date = new Date();
 var yy = date.getYear();
 var year = (yy < 1000) ? yy + 1900 : yy;
 var umur = year - tglUltah;
