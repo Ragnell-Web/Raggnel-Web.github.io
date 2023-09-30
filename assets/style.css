@@ -168,7 +168,7 @@ h3.intro {
 .gambar-profil {
   max-width: 100%;
   margin-bottom: 20px;
-
+  width: 100%;
 }
 
 article.profil p {
@@ -311,28 +311,28 @@ a.prev i {
   width: 400px;
   border: 1px solid black;
   border-radius: 10px;
-
-
 }
 
 .kotak .kotak-nilai {
+  position: relative;
+  z-index: -9;
   height: 100%;
   border-radius: 10px 0 0 10px;
   border: 1px solid white;
 }
 
 .pertama {
-  width: 95%;
+  width: 100%;
   background-color: rgb(241, 177, 57);
 }
 
 .kedua {
-  width: 85%;
+  width: 100%;
   background-color: rgb(129, 129, 255);
 }
 
 .ketiga {
-  width: 80%;
+  width: 100%;
   background-color: skyblue;
 }
 
@@ -344,6 +344,11 @@ a.prev i {
 .kelima {
   width: 60%;
   background-color: lightblue;
+}
+
+.keenam {
+  width: 100%;
+  background-color: yellow;
 }
 
 /* Akhir skill */
@@ -368,6 +373,7 @@ article.aside {
 article.aside img {
   width: 100px;
   height: 100px;
+  object-fit: cover;
   border-radius: 50%;
   border: 1px solid #444;
   box-shadow: 0 5px 8px 0px black;
